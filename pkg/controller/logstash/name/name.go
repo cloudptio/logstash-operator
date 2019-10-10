@@ -10,13 +10,13 @@ import (
 
 const httpServiceSuffix = "http"
 
-// LSNamer is a Namer that is configured with the defaults for resources related to a Kibana resource.
-var KBNamer = common_name.NewNamer("kb")
+// LSNamer is a Namer that is configured with the defaults for resources related to a Logstash resource.
+var LSNamer = common_name.NewNamer("ls")
 
-func HTTPService(kbName string) string {
-	return KBNamer.Suffix(kbName, httpServiceSuffix)
+func HTTPService(lsName string) string {
+	return LSNamer.Suffix(lsName, httpServiceSuffix)
 }
 
-func Deployment(kbName string) string {
-	return KBNamer.Suffix(kbName)
+func Deployment(lsName string) string {
+	return LSNamer.Suffix(lsName)
 }

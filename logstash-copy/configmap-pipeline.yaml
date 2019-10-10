@@ -1,0 +1,47 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-pipeline
+  labels:
+    app: logstash
+data:
+  input_main.conf: |-
+    input {
+      # udp {
+      #   port => 1514
+      #   type => syslog
+      # }
+      # tcp {
+      #   port => 1514
+      #   type => syslog
+      # }
+      beats {
+        port => 5044
+      }
+      # http {
+      #   port => 8080
+      # }
+      # kafka {
+      #   ## ref: https://www.elastic.co/guide/en/logstash/current/plugins-inputs-kafka.html
+      #   bootstrap_servers => "kafka-input:9092"
+      #   codec => json { charset => "UTF-8" }
+      #   consumer_threads => 1
+      #   topics => ["source"]
+      #   type => "example"
+      # }
+    }
+  output_main.conf: |
+    output {
+      stdout { codec => rubydebug }
+      elasticsearch {
+        hosts => ["https://quickstart-es-http.default:9200"]
+        manage_template => false
+        index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+        user => "elastic"
+        # note: below is fake/generated (should become dynamic)
+        password => "8jwjzmdwk8cd8xxszmbsbtrk"
+        ssl => true
+        ssl_certificate_verification => false
+        cacert => "/usr/share/kibana/config/elasticsearch-certs/tls.crt"
+      }
+    }

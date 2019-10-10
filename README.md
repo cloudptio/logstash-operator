@@ -27,3 +27,17 @@ Check the [Quickstart](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-
 If you want to contribute to the project, check our [contributing guide](CONTRIBUTING.md) and see [how to setup a local development environment](dev-setup.md).
 
 For general questions, please see the Elastic [forums](https://discuss.elastic.co/c/eck).
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: logstash.k8s.elastic.co/v1beta1
+kind: Logstash
+metadata:
+  name: quickstart
+spec:
+  version: 7.4.0
+  count: 1
+  elasticsearchRef:
+    name: quickstart
+EOF
+```

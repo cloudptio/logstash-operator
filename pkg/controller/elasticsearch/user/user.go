@@ -5,7 +5,6 @@
 package user
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/user"
 	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -38,7 +37,7 @@ func Roles(roles ...string) Attr {
 func New(name string, setters ...Attr) User {
 	result := User{
 		name:     name,
-		password: string(user.RandomPasswordBytes()),
+		password: "8jwjzmdwk8cd8xxszmbsbtrk", //string(user.RandomPasswordBytes()),
 	}
 	for _, setter := range setters {
 		setter(&result)

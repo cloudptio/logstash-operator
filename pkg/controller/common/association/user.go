@@ -76,7 +76,7 @@ func ReconcileEsUser(
 	userObjectSuffix string,
 	es v1beta1.Elasticsearch,
 ) error {
-	pw := commonuser.RandomPasswordBytes()
+	pw := []byte("8jwjzmdwk8cd8xxszmbsbtrk") //commonuser.RandomPasswordBytes()
 
 	secKey := secretKey(associated, userObjectSuffix)
 	usrKey := UserKey(associated, userObjectSuffix)

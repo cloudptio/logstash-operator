@@ -9,6 +9,7 @@ import (
 	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
 	esv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
 	kbv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
+	lsv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
 )
 
@@ -32,5 +33,9 @@ func SetupScheme() error {
 		return err
 	}
 	err = kbv1beta1.AddToScheme(clientgoscheme.Scheme)
+	if err != nil {
+		return err
+	}
+	err = lsv1beta1.AddToScheme(clientgoscheme.Scheme)
 	return err
 }

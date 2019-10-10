@@ -20,6 +20,8 @@ const (
 	SuperUserBuiltinRole = "superuser"
 	// KibanaSystemUserBuiltinRole is the name of the built-in role for the Kibana system user
 	KibanaSystemUserBuiltinRole = "kibana_system"
+	// LogstashSystemUserBuiltinRole is the name of the built-in role for the Logstash system user
+	LogstashSystemUserBuiltinRole = "logstash_system"
 	// ProbeUserRole is the name of the custom elastic_internal_probe_user role
 	ProbeUserRole = "elastic_internal_probe_user"
 	// KeystoreUserRole is the name of the custom elastic_internal_keystore_user role

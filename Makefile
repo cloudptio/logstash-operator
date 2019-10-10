@@ -154,7 +154,7 @@ lint:
 #############################
 
 install-crds: generate
-	kubectl apply -k config/crds-flavor-$(CRD_FLAVOR)
+	kubectl apply -k config/crds-flavor-$(CRD_FLAVOR) --validate=false
 
 # Run locally against the configured Kubernetes cluster, with port-forwarding enabled so that
 # the operator can reach services running in the cluster through k8s port-forward feature

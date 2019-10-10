@@ -26,6 +26,8 @@ import (
 	kbassn "github.com/elastic/cloud-on-k8s/pkg/controller/kibanaassociation"
 	"github.com/elastic/cloud-on-k8s/pkg/controller/license"
 	licensetrial "github.com/elastic/cloud-on-k8s/pkg/controller/license/trial"
+	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash"
+	lsassn "github.com/elastic/cloud-on-k8s/pkg/controller/logstashassociation"
 	"github.com/elastic/cloud-on-k8s/pkg/dev"
 	"github.com/elastic/cloud-on-k8s/pkg/dev/portforward"
 	"github.com/elastic/cloud-on-k8s/pkg/utils/net"
@@ -282,12 +284,20 @@ func execute() {
 			log.Error(err, "unable to create controller", "controller", "Kibana")
 			os.Exit(1)
 		}
+		if err = logstash.Add(mgr, params); err != nil {
+			log.Error(err, "unable to create controller", "controller", "Logstash")
+			os.Exit(1)
+		}
 		if err = asesassn.Add(mgr, params); err != nil {
 			log.Error(err, "unable to create controller", "controller", "ApmServerElasticsearchAssociation")
 			os.Exit(1)
 		}
 		if err = kbassn.Add(mgr, params); err != nil {
 			log.Error(err, "unable to create controller", "controller", "KibanaAssociation")
+			os.Exit(1)
+		}
+		if err = lsassn.Add(mgr, params); err != nil {
+			log.Error(err, "unable to create controller", "controller", "LogstashAssociation")
 			os.Exit(1)
 		}
 	}
