@@ -47,13 +47,13 @@ func Test_imageWithVersion(t *testing.T) {
 func TestNewPodTemplateSpec(t *testing.T) {
 	tests := []struct {
 		name       string
-		kb         v1beta1.Logstash
+		ls         v1beta1.Logstash
 		keystore   *keystore.Resources
 		assertions func(pod corev1.PodTemplateSpec)
 	}{
 		{
 			name: "defaults",
-			kb: v1beta1.Logstash{
+			ls: v1beta1.Logstash{
 				Spec: v1beta1.LogstashSpec{
 					Version: "7.1.0",
 				},
@@ -74,7 +74,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with additional volumes and init containers for the Keystore",
-			kb: v1beta1.Logstash{
+			ls: v1beta1.Logstash{
 				Spec: v1beta1.LogstashSpec{
 					Version: "7.1.0",
 				},
@@ -90,7 +90,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with custom image",
-			kb: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
+			ls: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
 				Image:   "my-custom-image:1.0.0",
 				Version: "7.1.0",
 			}},
@@ -101,7 +101,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with default resources",
-			kb: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
+			ls: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
 				Version: "7.1.0",
 			}},
 			keystore: nil,
@@ -111,7 +111,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with user-provided resources",
-			kb: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
+			ls: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
 				Version: "7.1.0",
 				PodTemplate: corev1.PodTemplateSpec{
 					Spec: corev1.PodSpec{
@@ -139,7 +139,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with user-provided init containers",
-			kb: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
+			ls: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
 				PodTemplate: corev1.PodTemplateSpec{
 					Spec: corev1.PodSpec{
 						InitContainers: []corev1.Container{
@@ -158,7 +158,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		{
 			name:     "with user-provided labels",
 			keystore: nil,
-			kb: v1beta1.Logstash{
+			ls: v1beta1.Logstash{
 				ObjectMeta: metav1.ObjectMeta{
 					Name: "logstash-name",
 				},
@@ -166,8 +166,8 @@ func TestNewPodTemplateSpec(t *testing.T) {
 					PodTemplate: corev1.PodTemplateSpec{
 						ObjectMeta: metav1.ObjectMeta{
 							Labels: map[string]string{
-								"label1":                  "value1",
-								"label2":                  "value2",
+								"label1":                    "value1",
+								"label2":                    "value2",
 								label.LogstashNameLabelName: "overridden-logstash-name",
 							},
 						},
@@ -183,7 +183,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with user-provided environment",
-			kb: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
+			ls: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
 				PodTemplate: corev1.PodTemplateSpec{
 					Spec: corev1.PodSpec{
 						Containers: []corev1.Container{
@@ -206,7 +206,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 		},
 		{
 			name: "with user-provided volumes and volume mounts",
-			kb: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
+			ls: v1beta1.Logstash{Spec: v1beta1.LogstashSpec{
 				PodTemplate: corev1.PodTemplateSpec{
 					Spec: corev1.PodSpec{
 						Containers: []corev1.Container{
@@ -235,7 +235,7 @@ func TestNewPodTemplateSpec(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := NewPodTemplateSpec(tt.kb, tt.keystore)
+			got := NewPodTemplateSpec(tt.ls, tt.keystore)
 			tt.assertions(got)
 		})
 	}

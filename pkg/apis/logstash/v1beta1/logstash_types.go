@@ -28,8 +28,11 @@ type LogstashSpec struct {
 	// If the namespace is not specified, the current resource namespace will be used.
 	ElasticsearchRef commonv1beta1.ObjectSelector `json:"elasticsearchRef,omitempty"`
 
-	// Config represents Logstash configuration.
-	Config *commonv1beta1.Config `json:"config,omitempty"`
+	// OutputConf represents Logstash configuration for outputs.
+	OutputConf string `json:"outputConf,omitempty"`
+
+	// InputConf represents Logstash configuration for inputs.
+	InputConf string `json:"inputConf,omitempty"`
 
 	// HTTP contains settings for HTTP.
 	HTTP commonv1beta1.HTTPConfig `json:"http,omitempty"`
@@ -63,7 +66,7 @@ const (
 // LogstashStatus defines the observed state of Logstash
 type LogstashStatus struct {
 	commonv1beta1.ReconcilerStatus `json:",inline"`
-	Health                         LogstashHealth                    `json:"health,omitempty"`
+	Health                         LogstashHealth                  `json:"health,omitempty"`
 	AssociationStatus              commonv1beta1.AssociationStatus `json:"associationStatus,omitempty"`
 }
 

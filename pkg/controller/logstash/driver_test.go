@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
-	kbtype "github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	lstype "github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates/http"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/deployment"
@@ -35,12 +35,12 @@ var customResourceLimits = corev1.ResourceRequirements{
 
 func TestDriverDeploymentParams(t *testing.T) {
 	s := scheme.Scheme
-	if err := kbtype.SchemeBuilder.AddToScheme(s); err != nil {
+	if err := lstype.SchemeBuilder.AddToScheme(s); err != nil {
 		assert.Fail(t, "failed to build custom scheme")
 	}
 
 	type args struct {
-		kb             func() *kbtype.Logstash
+		ls             func() *lstype.Logstash
 		initialObjects func() []runtime.Object
 	}
 
@@ -53,7 +53,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "without remote objects",
 			args: args{
-				kb:             logstashFixture,
+				ls:             logstashFixture,
 				initialObjects: func() []runtime.Object { return nil },
 			},
 			want:    deployment.Params{},
@@ -62,7 +62,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "with required remote objects",
 			args: args{
-				kb:             logstashFixture,
+				ls:             logstashFixture,
 				initialObjects: defaultInitialObjects,
 			},
 			want:    expectedDeploymentParams(),
@@ -71,12 +71,12 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "with TLS disabled",
 			args: args{
-				kb: func() *kbtype.Logstash {
-					kb := logstashFixture()
-					kb.Spec.HTTP.TLS.SelfSignedCertificate = &v1beta1.SelfSignedCertificate{
+				ls: func() *lstype.Logstash {
+					ls := logstashFixture()
+					ls.Spec.HTTP.TLS.SelfSignedCertificate = &v1beta1.SelfSignedCertificate{
 						Disabled: true,
 					}
-					return kb
+					return ls
 				},
 				initialObjects: defaultInitialObjects,
 			},
@@ -92,14 +92,14 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "with podTemplate specified",
 			args: args{
-				kb:             logstashFixtureWithPodTemplate,
+				ls:             logstashFixtureWithPodTemplate,
 				initialObjects: defaultInitialObjects,
 			},
 			want: func() deployment.Params {
 				p := expectedDeploymentParams()
 				p.PodTemplateSpec.Labels["mylabel"] = "value"
 				for i, c := range p.PodTemplateSpec.Spec.Containers {
-					if c.Name == kbtype.LogstashContainerName {
+					if c.Name == lstype.LogstashContainerName {
 						p.PodTemplateSpec.Spec.Containers[i].Resources = customResourceLimits
 					}
 				}
@@ -110,7 +110,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "Checksum takes secret contents into account",
 			args: args{
-				kb: logstashFixture,
+				ls: logstashFixture,
 				initialObjects: func() []runtime.Object {
 					return []runtime.Object{
 						&corev1.Secret{
@@ -133,7 +133,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 						},
 						&corev1.Secret{
 							ObjectMeta: metav1.ObjectMeta{
-								Name:      "test-kb-config",
+								Name:      "test-ls-config",
 								Namespace: "default",
 							},
 							Data: map[string][]byte{
@@ -142,7 +142,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 						},
 						&corev1.Secret{
 							ObjectMeta: metav1.ObjectMeta{
-								Name:      "test-kb-http-certs-internal",
+								Name:      "test-ls-http-certs-internal",
 								Namespace: "default",
 							},
 							Data: map[string][]byte{
@@ -155,7 +155,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 			want: func() deployment.Params {
 				p := expectedDeploymentParams()
 				p.PodTemplateSpec.Labels = map[string]string{
-					"common.k8s.elastic.co/type":            "logstash",
+					"common.k8s.elastic.co/type":              "logstash",
 					"logstash.k8s.elastic.co/name":            "test",
 					"logstash.k8s.elastic.co/config-checksum": "c5496152d789682387b90ea9b94efcd82a2c6f572f40c016fb86c0d7",
 				}
@@ -166,10 +166,10 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "6.x is supported",
 			args: args{
-				kb: func() *kbtype.Logstash {
-					kb := logstashFixture()
-					kb.Spec.Version = "6.5.0"
-					return kb
+				ls: func() *lstype.Logstash {
+					ls := logstashFixture()
+					ls.Spec.Version = "6.5.0"
+					return ls
 				},
 				initialObjects: defaultInitialObjects,
 			},
@@ -182,10 +182,10 @@ func TestDriverDeploymentParams(t *testing.T) {
 		{
 			name: "6.6 docker container already defaults elasticsearch.hosts",
 			args: args{
-				kb: func() *kbtype.Logstash {
-					kb := logstashFixture()
-					kb.Spec.Version = "6.6.0"
-					return kb
+				ls: func() *lstype.Logstash {
+					ls := logstashFixture()
+					ls.Spec.Version = "6.6.0"
+					return ls
 				},
 				initialObjects: defaultInitialObjects,
 			},
@@ -195,7 +195,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			kb := tt.args.kb()
+			ls := tt.args.ls()
 			initialObjects := tt.args.initialObjects()
 
 			client := k8s.WrapClient(fake.NewFakeClient(initialObjects...))
@@ -203,12 +203,12 @@ func TestDriverDeploymentParams(t *testing.T) {
 			err := w.Secrets.InjectScheme(scheme.Scheme)
 			assert.NoError(t, err)
 
-			kbVersion, err := version.Parse(kb.Spec.Version)
+			lsVersion, err := version.Parse(ls.Spec.Version)
 			assert.NoError(t, err)
-			d, err := newDriver(client, s, *kbVersion, w, record.NewFakeRecorder(100))
+			d, err := newDriver(client, s, *lsVersion, w, record.NewFakeRecorder(100))
 			assert.NoError(t, err)
 
-			got, err := d.deploymentParams(kb)
+			got, err := d.deploymentParams(ls)
 			if tt.wantErr {
 				require.Error(t, err)
 				return
@@ -222,7 +222,7 @@ func TestDriverDeploymentParams(t *testing.T) {
 func expectedDeploymentParams() deployment.Params {
 	false := false
 	return deployment.Params{
-		Name:      "test-kb",
+		Name:      "test-ls",
 		Namespace: "default",
 		Selector:  map[string]string{"common.k8s.elastic.co/type": "logstash", "logstash.k8s.elastic.co/name": "test"},
 		Labels:    map[string]string{"common.k8s.elastic.co/type": "logstash", "logstash.k8s.elastic.co/name": "test"},
@@ -230,7 +230,7 @@ func expectedDeploymentParams() deployment.Params {
 		PodTemplateSpec: corev1.PodTemplateSpec{
 			ObjectMeta: metav1.ObjectMeta{
 				Labels: map[string]string{
-					"common.k8s.elastic.co/type":            "logstash",
+					"common.k8s.elastic.co/type":              "logstash",
 					"logstash.k8s.elastic.co/name":            "test",
 					"logstash.k8s.elastic.co/config-checksum": "c530a02188193a560326ce91e34fc62dcbd5722b45534a3f60957663",
 				},
@@ -256,7 +256,7 @@ func expectedDeploymentParams() deployment.Params {
 						Name: "config",
 						VolumeSource: corev1.VolumeSource{
 							Secret: &corev1.SecretVolumeSource{
-								SecretName: "test-kb-config",
+								SecretName: "test-ls-config",
 								Optional:   &false,
 							},
 						},
@@ -265,7 +265,7 @@ func expectedDeploymentParams() deployment.Params {
 						Name: http.HTTPCertificatesSecretVolumeName,
 						VolumeSource: corev1.VolumeSource{
 							Secret: &corev1.SecretVolumeSource{
-								SecretName: "test-kb-http-certs-internal",
+								SecretName: "test-ls-http-certs-internal",
 								Optional:   &false,
 							},
 						},
@@ -295,7 +295,7 @@ func expectedDeploymentParams() deployment.Params {
 						},
 					},
 					Image: "my-image",
-					Name:  kbtype.LogstashContainerName,
+					Name:  lstype.LogstashContainerName,
 					Ports: []corev1.ContainerPort{
 						{Name: "http", ContainerPort: int32(5601), Protocol: corev1.ProtocolTCP},
 					},
@@ -321,32 +321,32 @@ func expectedDeploymentParams() deployment.Params {
 	}
 }
 
-func logstashFixture() *kbtype.Logstash {
-	kbFixture := &kbtype.Logstash{
+func logstashFixture() *lstype.Logstash {
+	lsFixture := &lstype.Logstash{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:      "test",
 			Namespace: "default",
 		},
-		Spec: kbtype.LogstashSpec{
+		Spec: lstype.LogstashSpec{
 			Version: "7.0.0",
 			Image:   "my-image",
 			Count:   1,
 		},
 	}
 
-	kbFixture.SetAssociationConf(&v1beta1.AssociationConf{
+	lsFixture.SetAssociationConf(&v1beta1.AssociationConf{
 		AuthSecretName: "test-auth",
 		AuthSecretKey:  "logstash-user",
 		CASecretName:   "es-ca-secret",
 		URL:            "https://localhost:9200",
 	})
 
-	return kbFixture
+	return lsFixture
 }
 
-func logstashFixtureWithPodTemplate() *kbtype.Logstash {
-	kbFixture := logstashFixture()
-	kbFixture.Spec.PodTemplate = corev1.PodTemplateSpec{
+func logstashFixtureWithPodTemplate() *lstype.Logstash {
+	lsFixture := logstashFixture()
+	lsFixture.Spec.PodTemplate = corev1.PodTemplateSpec{
 		ObjectMeta: metav1.ObjectMeta{
 			Labels: map[string]string{
 				"mylabel": "value",
@@ -355,14 +355,14 @@ func logstashFixtureWithPodTemplate() *kbtype.Logstash {
 		Spec: corev1.PodSpec{
 			Containers: []corev1.Container{
 				{
-					Name:      kbtype.LogstashContainerName,
+					Name:      lstype.LogstashContainerName,
 					Resources: customResourceLimits,
 				},
 			},
 		},
 	}
 
-	return kbFixture
+	return lsFixture
 }
 
 func defaultInitialObjects() []runtime.Object {
@@ -387,7 +387,7 @@ func defaultInitialObjects() []runtime.Object {
 		},
 		&corev1.Secret{
 			ObjectMeta: metav1.ObjectMeta{
-				Name:      "test-kb-config",
+				Name:      "test-ls-config",
 				Namespace: "default",
 			},
 			Data: map[string][]byte{
@@ -396,7 +396,7 @@ func defaultInitialObjects() []runtime.Object {
 		},
 		&corev1.Secret{
 			ObjectMeta: metav1.ObjectMeta{
-				Name:      "test-kb-http-certs-internal",
+				Name:      "test-ls-http-certs-internal",
 				Namespace: "default",
 			},
 			Data: map[string][]byte{

@@ -4,31 +4,11 @@
 
 package volume
 
-import (
-	"github.com/cloudptio/logstash-operator/pkg/controller/common/volume"
-)
-
 const (
 	DataVolumeName      = "logstash-data"
-	DataVolumeMountPath = "/usr/share/kibana/data"
+	DataVolumeMountPath = "/usr/share/logstash/data"
 
-	PatternsVolumeName = "patterns"
-	FilesVolumeName    = "files"
-	PipelineVolumeName = "pipeline"
-
-	PatternsVolumeMountPath = ""
-	FilesVolumeMountPath = ""
+	PipelineVolumeName      = "pipeline"
 	PipelineVolumeMountPath = "/usr/share/logstash/pipeline"
-
-	PatternsVolumeConfigMapName = "logstash-patterns"
-	FilesVolumeConfigMapName    = "logstash-files"
-	PipelineVolumeConfigMapName = "logstash-pipeline"
-
-	PatternsVolumeMode = 420
-	FilesVolumeMode    = 420
-	PipelineVolumeMode = 420
+	PipelineVolumeMode      = 420
 )
-
-var LogstashPatternsVolume = volume.NewConfigMapVolumeWithMode(PatternsVolumeConfigMapName, PatternsVolumeName, PatternsVolumeMountPath, int32(PatternsVolumeMode))
-var LogstashFilesVolume = volume.NewConfigMapVolumeWithMode(FilesVolumeConfigMapName, FilesVolumeName, FilesVolumeMountPath, int32(FilesVolumeMode))
-var LogstashPipelineVolume = volume.NewConfigMapVolumeWithMode(PipelineVolumeConfigMapName, PipelineVolumeName, PipelineVolumeMountPath, int32(PipelineVolumeMode))

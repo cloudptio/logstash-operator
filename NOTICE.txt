@@ -40,7 +40,7 @@ THE SOFTWARE.
 --------------------------------------------------------------------------------
 Module  : github.com/davecgh/go-spew
 Version : v1.1.1
-Time    : 2019-01-23 06:56:58 +0000 UTC
+Time    : 2018-02-21 23:26:28 +0000 UTC
 
 Contents of probable licence file $GOMODCACHE/github.com/davecgh/go-spew@v1.1.1/LICENSE:
 
@@ -274,7 +274,7 @@ Contents of probable licence file $GOMODCACHE/github.com/elastic/go-ucfg@v0.7.0/
 --------------------------------------------------------------------------------
 Module  : github.com/ghodss/yaml
 Version : v1.0.0
-Time    : 2019-01-23 08:07:05 +0000 UTC
+Time    : 2017-03-27 23:54:44 +0000 UTC
 
 Contents of probable licence file $GOMODCACHE/github.com/ghodss/yaml@v1.0.0/LICENSE:
 
@@ -1378,7 +1378,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------------
 Module  : github.com/pkg/errors
 Version : v0.8.1
-Time    : 2019-01-23 06:55:51 +0000 UTC
+Time    : 2019-01-03 06:52:24 +0000 UTC
 
 Contents of probable licence file $GOMODCACHE/github.com/pkg/errors@v0.8.1/LICENSE:
 
@@ -1630,7 +1630,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------------
 Module  : github.com/spf13/viper
 Version : v1.4.0
-Time    : 2019-05-25 04:16:44 +0000 UTC
+Time    : 2019-05-24 19:57:43 +0000 UTC
 
 Contents of probable licence file $GOMODCACHE/github.com/spf13/viper@v1.4.0/LICENSE:
 
@@ -1689,7 +1689,7 @@ SOFTWARE.
 --------------------------------------------------------------------------------
 Module  : go.uber.org/zap
 Version : v1.10.0
-Time    : 2019-04-30 08:10:18 +0000 UTC
+Time    : 2019-04-30 01:48:40 +0000 UTC
 
 Contents of probable licence file $GOMODCACHE/go.uber.org/zap@v1.10.0/LICENSE.txt:
 
