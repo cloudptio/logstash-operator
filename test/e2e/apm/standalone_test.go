@@ -7,9 +7,9 @@ package apm
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/apmserver"
+	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/apmserver"
 )
 
 // TestApmStandalone runs a test suite on an APM server that is not outputting to Elasticsearch

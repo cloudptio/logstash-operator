@@ -5,8 +5,8 @@
 package config
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/volume"
+	"github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/volume"
 )
 
 // Constants to use for the config files in a Logstash pod.

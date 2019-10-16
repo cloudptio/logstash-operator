@@ -7,11 +7,11 @@ package kibana
 import (
 	corev1 "k8s.io/api/core/v1"
 
-	kibanav1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/defaults"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/label"
-	kbname "github.com/elastic/cloud-on-k8s/pkg/controller/kibana/name"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/pod"
+	kibanav1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/defaults"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/label"
+	kbname "github.com/cloudptio/logstash-operator/pkg/controller/kibana/name"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/pod"
 )
 
 func NewService(kb kibanav1beta1.Kibana) *corev1.Service {

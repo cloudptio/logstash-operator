@@ -7,12 +7,12 @@ package driver
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/expectations"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/migration"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/reconcile"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/expectations"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/migration"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/reconcile"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/stretchr/testify/assert"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
 )

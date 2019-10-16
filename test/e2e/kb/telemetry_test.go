@@ -8,10 +8,10 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/about"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/elasticsearch"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/kibana"
+	"github.com/cloudptio/logstash-operator/pkg/about"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/elasticsearch"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/kibana"
 	"github.com/stretchr/testify/require"
 )
 

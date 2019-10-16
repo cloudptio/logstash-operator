@@ -7,8 +7,8 @@ package kibana
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 	"k8s.io/apimachinery/pkg/api/meta"

@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/initcontainer"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/initcontainer"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 )

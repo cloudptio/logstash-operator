@@ -17,8 +17,8 @@ import (
 	"time"
 
 	"github.com/Masterminds/sprig"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/command"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/command"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

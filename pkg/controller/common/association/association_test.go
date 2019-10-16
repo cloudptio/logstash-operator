@@ -7,9 +7,9 @@ package association
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/apm/v1beta1"
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/apm/v1beta1"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"

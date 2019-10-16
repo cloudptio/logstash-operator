@@ -25,7 +25,7 @@ install_refdocs() {
 
 build_docs() {
     local TEMP_OUT_FILE=$(mktemp)
-    $REFDOCS_BIN -api-dir=github.com/elastic/cloud-on-k8s/pkg/apis \
+    $REFDOCS_BIN -api-dir=github.com/cloudptio/logstash-operator/pkg/apis \
         -template-dir="${SCRIPT_DIR}/templates" \
         -out-file=$TEMP_OUT_FILE \
         -config="${SCRIPT_DIR}/config.json"

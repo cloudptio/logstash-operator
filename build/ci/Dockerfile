@@ -55,11 +55,11 @@ RUN curl -fsSLO https://github.com/gotestyourself/gotestsum/releases/download/v$
     rm gotestsum_${GOTESTSUM_VERSION}_linux_amd64.tar.gz
 
 # Add Go dependencies to Docker image
-WORKDIR /go/src/github.com/elastic/cloud-on-k8s
+WORKDIR /go/src/github.com/cloudptio/logstash-operator
 COPY ["go.mod", "go.sum", "./"]
 RUN go mod download
 
 # Cleanup
-RUN rm /go/src/github.com/elastic/cloud-on-k8s/go.mod && \
-    rm /go/src/github.com/elastic/cloud-on-k8s/go.sum
+RUN rm /go/src/github.com/cloudptio/logstash-operator/go.mod && \
+    rm /go/src/github.com/cloudptio/logstash-operator/go.sum
 WORKDIR /

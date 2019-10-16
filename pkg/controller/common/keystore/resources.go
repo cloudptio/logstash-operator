@@ -7,9 +7,9 @@ package keystore
 import (
 	"strings"
 
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/driver"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/name"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/driver"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/name"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

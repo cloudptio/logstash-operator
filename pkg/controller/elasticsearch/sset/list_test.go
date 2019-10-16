@@ -15,9 +15,9 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client/fake"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 var ssetv7 = appsv1.StatefulSet{

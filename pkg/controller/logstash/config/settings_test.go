@@ -7,10 +7,10 @@ package config
 import (
 	"testing"
 
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	ucfg "github.com/elastic/go-ucfg"
 	uyaml "github.com/elastic/go-ucfg/yaml"
 	"github.com/go-test/deep"

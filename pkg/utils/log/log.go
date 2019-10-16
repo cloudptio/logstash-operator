@@ -10,8 +10,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/elastic/cloud-on-k8s/pkg/about"
-	"github.com/elastic/cloud-on-k8s/pkg/dev"
+	"github.com/cloudptio/logstash-operator/pkg/about"
+	"github.com/cloudptio/logstash-operator/pkg/dev"
 	"github.com/spf13/pflag"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"

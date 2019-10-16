@@ -13,8 +13,8 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
 	corev1 "k8s.io/api/core/v1"
 )
 

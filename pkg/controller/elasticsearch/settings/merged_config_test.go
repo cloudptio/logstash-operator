@@ -7,9 +7,9 @@ package settings
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/certificates"
 	"github.com/stretchr/testify/require"
 )
 

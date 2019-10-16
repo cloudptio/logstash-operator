@@ -7,8 +7,8 @@ package driver
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/sset"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/sset"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/stretchr/testify/assert"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"

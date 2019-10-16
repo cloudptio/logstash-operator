@@ -5,9 +5,9 @@
 package kibana
 
 import (
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	kbtype "github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	kbtype "github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

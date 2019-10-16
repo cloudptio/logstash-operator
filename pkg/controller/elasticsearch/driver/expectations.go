@@ -5,8 +5,8 @@
 package driver
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/sset"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/sset"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 func (d *defaultDriver) expectationsMet(actualStatefulSets sset.StatefulSetList) (bool, error) {

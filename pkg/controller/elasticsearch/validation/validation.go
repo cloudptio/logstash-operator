@@ -5,9 +5,9 @@
 package validation
 
 import (
-	estype "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/validation"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
+	estype "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/validation"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
 	pkgerrors "github.com/pkg/errors"
 )
 

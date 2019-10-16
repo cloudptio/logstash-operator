@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/utils/stringsutil"
+	"github.com/cloudptio/logstash-operator/pkg/utils/stringsutil"
 )
 
 // Info represents the response from /
@@ -136,7 +136,7 @@ func (s Shards) GetShardsByNode() map[string]Shards {
 
 // Strip extra information from the nodeName field
 // eg. "cluster-node-2 -> 10.56.2.33 8DqGuLtrSNyMfE2EfKNDgg" becomes "cluster-node-2"
-// see https://github.com/elastic/cloud-on-k8s/issues/1796
+// see https://github.com/cloudptio/logstash-operator/issues/1796
 func (s *Shards) UnmarshalJSON(data []byte) error {
 	type Alias Shards
 	aux := (*Alias)(s)

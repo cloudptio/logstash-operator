@@ -14,9 +14,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 var log = logf.Log.WithName("statefulset")

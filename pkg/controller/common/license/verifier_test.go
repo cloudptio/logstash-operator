@@ -13,7 +13,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/utils/chrono"
+	"github.com/cloudptio/logstash-operator/pkg/utils/chrono"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

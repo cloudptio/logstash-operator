@@ -7,9 +7,9 @@ package label
 import (
 	"fmt"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
 	"github.com/pkg/errors"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"

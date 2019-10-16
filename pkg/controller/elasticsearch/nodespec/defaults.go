@@ -7,17 +7,17 @@ package nodespec
 import (
 	"path"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/resource"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/defaults"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/network"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/user"
-	esvolume "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/volume"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/defaults"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/network"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/user"
+	esvolume "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/volume"
 )
 
 const (
@@ -67,8 +67,8 @@ func DefaultEnvVars(httpCfg v1beta1.HTTPConfig) []corev1.EnvVar {
 			// In production testing, no negative impact on curl's behavior is observed from this setting.
 			// This setting is primarily targeted at curl invocation in the readinessProbe.
 			// References:
-			//   https://github.com/elastic/cloud-on-k8s/issues/1581#issuecomment-525527334
-			//   https://github.com/elastic/cloud-on-k8s/issues/1635
+			//   https://github.com/cloudptio/logstash-operator/issues/1581#issuecomment-525527334
+			//   https://github.com/cloudptio/logstash-operator/issues/1635
 			//   https://issuetracker.google.com/issues/140577001
 			{Name: "NSS_SDB_USE_CACHE", Value: "no"},
 		}...,

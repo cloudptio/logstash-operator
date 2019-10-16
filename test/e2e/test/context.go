@@ -11,7 +11,7 @@ import (
 	"os"
 	"sync"
 
-	logutil "github.com/elastic/cloud-on-k8s/pkg/utils/log"
+	logutil "github.com/cloudptio/logstash-operator/pkg/utils/log"
 	"github.com/go-logr/logr"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 )

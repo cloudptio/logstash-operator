@@ -7,10 +7,10 @@ package apmserverelasticsearchassociation
 import (
 	"testing"
 
-	apmtype "github.com/elastic/cloud-on-k8s/pkg/apis/apm/v1beta1"
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	estype "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	apmtype "github.com/cloudptio/logstash-operator/pkg/apis/apm/v1beta1"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	estype "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"

@@ -7,10 +7,10 @@ package http
 import (
 	"strings"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/finalizer"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/name"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/watches"
+	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/finalizer"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/name"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/watches"
 	"k8s.io/apimachinery/pkg/types"
 )
 

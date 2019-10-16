@@ -7,12 +7,12 @@ package association
 import (
 	"reflect"
 
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates/http"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	esname "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/name"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates/http"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	esname "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/name"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

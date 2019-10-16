@@ -7,14 +7,14 @@ package config
 import (
 	"path"
 
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/association"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates/http"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/es"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/association"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates/http"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/es"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 // Kibana configuration settings file

@@ -5,9 +5,9 @@
 package zen2
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/nodespec"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/nodespec"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/settings"
 )
 
 // SetupInitialMasterNodes modifies the ES config of the given resources to setup

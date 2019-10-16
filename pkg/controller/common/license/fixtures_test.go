@@ -10,7 +10,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

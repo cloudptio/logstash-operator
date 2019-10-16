@@ -7,11 +7,11 @@ package logstash
 import (
 	corev1 "k8s.io/api/core/v1"
 
-	logstashv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/defaults"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/label"
-	lsname "github.com/elastic/cloud-on-k8s/pkg/controller/logstash/name"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/pod"
+	logstashv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/defaults"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/label"
+	lsname "github.com/cloudptio/logstash-operator/pkg/controller/logstash/name"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/pod"
 )
 
 func NewService(ls logstashv1beta1.Logstash) *corev1.Service {

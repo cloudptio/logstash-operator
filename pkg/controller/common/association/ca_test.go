@@ -7,12 +7,12 @@ package association
 import (
 	"testing"
 
-	estype "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	kbtype "github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/watches"
-	esname "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/name"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	estype "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	kbtype "github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/watches"
+	esname "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/name"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

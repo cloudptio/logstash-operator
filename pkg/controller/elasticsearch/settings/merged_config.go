@@ -7,12 +7,12 @@ package settings
 import (
 	"path"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	common "github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	escerts "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/volume"
+	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	common "github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	escerts "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/volume"
 )
 
 // NewMergedESConfig merges user provided Elasticsearch configuration with configuration derived from the given

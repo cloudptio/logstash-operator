@@ -12,8 +12,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/stringsutil"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/utils/stringsutil"
 )
 
 type baseClient struct {

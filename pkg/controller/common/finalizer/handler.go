@@ -5,8 +5,8 @@
 package finalizer
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/stringsutil"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/utils/stringsutil"
 	"k8s.io/apimachinery/pkg/api/meta"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

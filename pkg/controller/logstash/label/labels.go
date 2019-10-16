@@ -4,7 +4,7 @@
 
 package label
 
-import "github.com/elastic/cloud-on-k8s/pkg/controller/common"
+import "github.com/cloudptio/logstash-operator/pkg/controller/common"
 
 const (
 	// LogstashNameLabelName used to represent a Logstash in k8s resources

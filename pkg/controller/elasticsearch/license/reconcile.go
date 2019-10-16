@@ -5,9 +5,9 @@
 package license
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	esclient "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	esclient "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 // Reconcile reconciles the current Elasticsearch license with the desired one.

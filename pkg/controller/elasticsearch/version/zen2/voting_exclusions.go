@@ -9,10 +9,10 @@ import (
 
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/sset"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/sset"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 var (

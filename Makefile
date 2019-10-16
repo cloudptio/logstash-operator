@@ -68,10 +68,10 @@ TAG ?= $(shell git rev-parse --short --verify HEAD)
 OPERATOR_IMAGE ?= $(IMG):$(VERSION)-$(TAG)
 
 
-GO_LDFLAGS := -X github.com/elastic/cloud-on-k8s/pkg/about.version=$(VERSION) \
-	-X github.com/elastic/cloud-on-k8s/pkg/about.buildHash=$(TAG) \
-	-X github.com/elastic/cloud-on-k8s/pkg/about.buildDate=$(shell date -u +'%Y-%m-%dT%H:%M:%SZ') \
-	-X github.com/elastic/cloud-on-k8s/pkg/about.buildSnapshot=$(SNAPSHOT)
+GO_LDFLAGS := -X github.com/cloudptio/logstash-operator/pkg/about.version=$(VERSION) \
+	-X github.com/cloudptio/logstash-operator/pkg/about.buildHash=$(TAG) \
+	-X github.com/cloudptio/logstash-operator/pkg/about.buildDate=$(shell date -u +'%Y-%m-%dT%H:%M:%SZ') \
+	-X github.com/cloudptio/logstash-operator/pkg/about.buildSnapshot=$(SNAPSHOT)
 
 # Setting for CI, if set to true will prevent building and using local Docker image
 SKIP_DOCKER_COMMAND ?= false
@@ -125,7 +125,7 @@ generate-notice-file:
 	@hack/licence-detector/generate-notice.sh
 
 elastic-operator: generate
-	go build -mod=readonly -ldflags "$(GO_LDFLAGS)" -tags='$(GO_TAGS)' -o bin/elastic-operator github.com/elastic/cloud-on-k8s/cmd
+	go build -mod=readonly -ldflags "$(GO_LDFLAGS)" -tags='$(GO_TAGS)' -o bin/elastic-operator github.com/cloudptio/logstash-operator/cmd
 
 clean:
 	rm -f pkg/controller/common/license/zz_generated.pubkey.go

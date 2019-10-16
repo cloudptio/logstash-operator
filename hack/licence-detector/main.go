@@ -19,7 +19,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/hack/licence-detector/detector"
+	"github.com/cloudptio/logstash-operator/hack/licence-detector/detector"
 )
 
 var (

@@ -4,7 +4,7 @@ FROM golang:1.13
 ARG E2E_JSON
 ENV E2E_JSON $E2E_JSON
 
-WORKDIR /go/src/github.com/elastic/cloud-on-k8s
+WORKDIR /go/src/github.com/cloudptio/logstash-operator
 
 # Create the go test cache directory
 RUN mkdir -p /.cache && chmod 777 /.cache

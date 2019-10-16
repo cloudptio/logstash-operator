@@ -7,13 +7,13 @@ package certificates
 import (
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates/http"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/driver"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/label"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/name"
+	"github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates/http"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/driver"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/name"
 	coverv1 "k8s.io/api/core/v1"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 )

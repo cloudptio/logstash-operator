@@ -7,7 +7,7 @@ package v1beta1
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
 	"github.com/go-test/deep"
 	"github.com/stretchr/testify/require"
 )

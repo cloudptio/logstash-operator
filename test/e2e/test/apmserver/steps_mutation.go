@@ -4,7 +4,7 @@
 
 package apmserver
 
-import "github.com/elastic/cloud-on-k8s/test/e2e/test"
+import "github.com/cloudptio/logstash-operator/test/e2e/test"
 
 func (b Builder) MutationTestSteps(k *test.K8sClient) test.StepList {
 	panic("not implemented")

@@ -5,9 +5,9 @@
 package main
 
 import (
-	"github.com/elastic/cloud-on-k8s/cmd/manager"
-	"github.com/elastic/cloud-on-k8s/pkg/dev"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/log"
+	"github.com/cloudptio/logstash-operator/cmd/manager"
+	"github.com/cloudptio/logstash-operator/pkg/dev"
+	"github.com/cloudptio/logstash-operator/pkg/utils/log"
 	"github.com/spf13/cobra"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"

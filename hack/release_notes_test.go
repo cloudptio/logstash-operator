@@ -227,7 +227,7 @@ func Test_extractRelatedIssues(t *testing.T) {
 			name: "single issue",
 			args: args{
 				issue: &Issue{
-					Body: "Resolves https://github.com/elastic/cloud-on-k8s/issues/1241\r\n\r\n* If there is no existing annotation on a resource",
+					Body: "Resolves https://github.com/cloudptio/logstash-operator/issues/1241\r\n\r\n* If there is no existing annotation on a resource",
 				},
 			},
 			want:    []int{1241},
@@ -237,7 +237,7 @@ func Test_extractRelatedIssues(t *testing.T) {
 			name: "multi issue",
 			args: args{
 				issue: &Issue{
-					Body: "Resolves https://github.com/elastic/cloud-on-k8s/issues/1241\r\n\r\nRelated https://github.com/elastic/cloud-on-k8s/issues/1245\r\n\r\n",
+					Body: "Resolves https://github.com/cloudptio/logstash-operator/issues/1241\r\n\r\nRelated https://github.com/cloudptio/logstash-operator/issues/1245\r\n\r\n",
 				},
 			},
 			want:    []int{1241, 1245},
@@ -247,7 +247,7 @@ func Test_extractRelatedIssues(t *testing.T) {
 			name: "non issue",
 			args: args{
 				issue: &Issue{
-					Body: "Resolves https://github.com/elastic/cloud-on-k8s/issues/1241\r\n\r\nSee all issues https://github.com/elastic/cloud-on-k8s/issues/\r\n\r\n",
+					Body: "Resolves https://github.com/cloudptio/logstash-operator/issues/1241\r\n\r\nSee all issues https://github.com/cloudptio/logstash-operator/issues/\r\n\r\n",
 				},
 			},
 			want:    []int{1241},
@@ -257,7 +257,7 @@ func Test_extractRelatedIssues(t *testing.T) {
 			name: "duplicate issue",
 			args: args{
 				issue: &Issue{
-					Body: "Resolves https://github.com/elastic/cloud-on-k8s/issues/1241\r\n\r\nRelated https://github.com/elastic/cloud-on-k8s/issues/1241\r\n\r\n",
+					Body: "Resolves https://github.com/cloudptio/logstash-operator/issues/1241\r\n\r\nRelated https://github.com/cloudptio/logstash-operator/issues/1241\r\n\r\n",
 				},
 			},
 			want:    []int{1241},
@@ -267,7 +267,7 @@ func Test_extractRelatedIssues(t *testing.T) {
 			name: "ordered",
 			args: args{
 				issue: &Issue{
-					Body: "Resolves https://github.com/elastic/cloud-on-k8s/issues/1245\r\n\r\nRelated https://github.com/elastic/cloud-on-k8s/issues/1241\r\n\r\n",
+					Body: "Resolves https://github.com/cloudptio/logstash-operator/issues/1245\r\n\r\nRelated https://github.com/cloudptio/logstash-operator/issues/1241\r\n\r\n",
 				},
 			},
 			want:    []int{1241, 1245},

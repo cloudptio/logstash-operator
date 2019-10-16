@@ -8,9 +8,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/license"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/license"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"

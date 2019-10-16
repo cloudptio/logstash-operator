@@ -14,7 +14,7 @@ PROJECT_DIR=${SCRIPT_DIR}/../..
 build_licence_detector() {
     (
         cd $SCRIPT_DIR
-        go build -v github.com/elastic/cloud-on-k8s/hack/licence-detector
+        go build -v github.com/cloudptio/logstash-operator/hack/licence-detector
     )
 }
 

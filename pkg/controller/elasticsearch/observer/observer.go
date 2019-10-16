@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
 	"k8s.io/apimachinery/pkg/types"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 )

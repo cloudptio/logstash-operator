@@ -5,8 +5,8 @@
 package version6
 
 import (
-	kbtype "github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/config"
+	kbtype "github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/config"
 )
 
 // SettingsFactory returns Kibana settings for a 6.x Kibana.

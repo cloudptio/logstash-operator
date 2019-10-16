@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

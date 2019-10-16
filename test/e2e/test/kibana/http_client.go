@@ -13,10 +13,10 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/name"
-	kbname "github.com/elastic/cloud-on-k8s/pkg/controller/kibana/name"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/name"
+	kbname "github.com/cloudptio/logstash-operator/pkg/controller/kibana/name"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 	"github.com/pkg/errors"
 )
 

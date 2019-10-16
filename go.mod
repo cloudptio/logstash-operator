@@ -1,4 +1,4 @@
-module github.com/elastic/cloud-on-k8s
+module github.com/cloudptio/logstash-operator
 
 go 1.13
 

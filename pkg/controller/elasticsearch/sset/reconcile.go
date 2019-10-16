@@ -5,11 +5,11 @@
 package sset
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/expectations"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/hash"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/expectations"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/hash"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	appsv1 "k8s.io/api/apps/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )

@@ -7,8 +7,8 @@ package main
 import (
 	"os"
 
-	"github.com/elastic/cloud-on-k8s/pkg/utils/log"
-	"github.com/elastic/cloud-on-k8s/test/e2e/cmd/run"
+	"github.com/cloudptio/logstash-operator/pkg/utils/log"
+	"github.com/cloudptio/logstash-operator/test/e2e/cmd/run"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

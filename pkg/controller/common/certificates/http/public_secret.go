@@ -7,11 +7,11 @@ package http
 import (
 	"reflect"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/name"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/maps"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/name"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/utils/maps"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

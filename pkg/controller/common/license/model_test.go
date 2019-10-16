@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	controllerscheme "github.com/elastic/cloud-on-k8s/pkg/controller/common/scheme"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/chrono"
+	controllerscheme "github.com/cloudptio/logstash-operator/pkg/controller/common/scheme"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/utils/chrono"
 	"github.com/go-test/deep"
 	"github.com/stretchr/testify/require"
 )

@@ -7,15 +7,15 @@ package nodespec
 import (
 	corev1 "k8s.io/api/core/v1"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/keystore"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/volume"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/initcontainer"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/name"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/user"
-	esvolume "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/volume"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/keystore"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/volume"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/initcontainer"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/name"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/user"
+	esvolume "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/volume"
 )
 
 func buildVolumes(esName string, nodeSpec v1beta1.NodeSet, keystoreResources *keystore.Resources) ([]corev1.Volume, []corev1.VolumeMount) {

@@ -7,8 +7,8 @@ package common
 import (
 	"reflect"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"

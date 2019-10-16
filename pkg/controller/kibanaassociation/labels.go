@@ -5,9 +5,9 @@
 package kibanaassociation
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/user"
+	"github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/user"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/types"
 	"sigs.k8s.io/controller-runtime/pkg/client"

@@ -5,7 +5,7 @@
 package main
 
 import (
-	"github.com/elastic/cloud-on-k8s/hack/deployer/cmd"
+	"github.com/cloudptio/logstash-operator/hack/deployer/cmd"
 )
 
 func main() {

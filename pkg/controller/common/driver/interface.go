@@ -5,8 +5,8 @@
 package driver
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/watches"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/watches"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/client-go/tools/record"
 )

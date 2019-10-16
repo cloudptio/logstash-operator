@@ -5,11 +5,11 @@
 package scheme
 
 import (
-	apmv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/apm/v1beta1"
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	esv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	kbv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	lsv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
+	apmv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/apm/v1beta1"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	esv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	kbv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	lsv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
 )
 

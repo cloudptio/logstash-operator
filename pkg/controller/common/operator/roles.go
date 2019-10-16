@@ -7,7 +7,7 @@ package operator
 import (
 	"fmt"
 
-	"github.com/elastic/cloud-on-k8s/pkg/utils/stringsutil"
+	"github.com/cloudptio/logstash-operator/pkg/utils/stringsutil"
 )
 
 // Roles that an operator can assume

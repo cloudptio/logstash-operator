@@ -10,9 +10,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/operator"
-	controllerscheme "github.com/elastic/cloud-on-k8s/pkg/controller/common/scheme"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/operator"
+	controllerscheme "github.com/cloudptio/logstash-operator/pkg/controller/common/scheme"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/stretchr/testify/require"
 	"k8s.io/client-go/rest"
 	"sigs.k8s.io/controller-runtime/pkg/envtest"

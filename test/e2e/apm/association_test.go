@@ -8,14 +8,14 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/apm/v1beta1"
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/annotation"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/events"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/apmserver"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/elasticsearch"
+	"github.com/cloudptio/logstash-operator/pkg/apis/apm/v1beta1"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/annotation"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/events"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/apmserver"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/elasticsearch"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
 )
@@ -23,7 +23,7 @@ import (
 // TestCrossNSAssociation tests associating Elasticsearch and an APM Server running in different namespaces.
 func TestCrossNSAssociation(t *testing.T) {
 	// This test currently does not work in the E2E environment because each namespace has a dedicated
-	// controller (see https://github.com/elastic/cloud-on-k8s/issues/1438)
+	// controller (see https://github.com/cloudptio/logstash-operator/issues/1438)
 	if !(test.Ctx().Local) {
 		t.SkipNow()
 	}

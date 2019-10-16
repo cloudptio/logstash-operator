@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	estype "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	estype "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

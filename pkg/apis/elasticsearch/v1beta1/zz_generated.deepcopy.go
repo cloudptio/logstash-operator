@@ -9,7 +9,7 @@
 package v1beta1
 
 import (
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
 	"k8s.io/api/core/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 )

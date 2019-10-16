@@ -5,7 +5,7 @@
 package observer
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/finalizer"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/finalizer"
 	"k8s.io/apimachinery/pkg/types"
 )
 

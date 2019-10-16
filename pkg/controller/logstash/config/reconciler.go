@@ -7,11 +7,11 @@ package config
 import (
 	"reflect"
 
-	"github.com/elastic/cloud-on-k8s/pkg/about"
-	"github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/label"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/about"
+	"github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/label"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes/scheme"

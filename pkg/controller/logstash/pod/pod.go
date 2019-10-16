@@ -5,13 +5,13 @@
 package pod
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/defaults"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/keystore"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/pod"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/label"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/volume"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/stringsutil"
+	"github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/defaults"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/keystore"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/pod"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/volume"
+	"github.com/cloudptio/logstash-operator/pkg/utils/stringsutil"
 
 	corev1 "k8s.io/api/core/v1"
 )

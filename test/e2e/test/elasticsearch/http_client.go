@@ -5,16 +5,16 @@
 package elasticsearch
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/name"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/reconcile"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/services"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/sset"
-	"github.com/elastic/cloud-on-k8s/pkg/dev/portforward"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/net"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/name"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/reconcile"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/services"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/sset"
+	"github.com/cloudptio/logstash-operator/pkg/dev/portforward"
+	"github.com/cloudptio/logstash-operator/pkg/utils/net"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 )
 
 // NewElasticsearchClient returns an ES client for the given ES cluster

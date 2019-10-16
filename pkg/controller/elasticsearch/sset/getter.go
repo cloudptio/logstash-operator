@@ -5,8 +5,8 @@
 package sset
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
 	appsv1 "k8s.io/api/apps/v1"
 )
 

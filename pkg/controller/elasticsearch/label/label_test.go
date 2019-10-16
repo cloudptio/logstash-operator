@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/api/meta"

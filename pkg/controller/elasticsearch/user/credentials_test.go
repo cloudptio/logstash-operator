@@ -9,12 +9,12 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/user"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/user"
 	"k8s.io/apimachinery/pkg/types"
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
 	"github.com/stretchr/testify/assert"
 )
 

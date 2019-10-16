@@ -7,9 +7,9 @@ package apmserver
 import (
 	"testing"
 
-	apmtype "github.com/elastic/cloud-on-k8s/pkg/apis/apm/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	apmtype "github.com/cloudptio/logstash-operator/pkg/apis/apm/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 	"github.com/stretchr/testify/require"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp" // auth on gke
 )

@@ -7,12 +7,12 @@ package keystore
 import (
 	"testing"
 
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/driver"
-	watches2 "github.com/elastic/cloud-on-k8s/pkg/controller/common/watches"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/name"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/driver"
+	watches2 "github.com/cloudptio/logstash-operator/pkg/controller/common/watches"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/name"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/magiconair/properties/assert"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"

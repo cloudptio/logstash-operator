@@ -8,14 +8,14 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	common "github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/nodespec"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/sset"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	common "github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/nodespec"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/sset"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 )
 

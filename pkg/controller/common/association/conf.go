@@ -9,9 +9,9 @@ import (
 	"reflect"
 	"unsafe"
 
-	commonv1beta1 "github.com/elastic/cloud-on-k8s/pkg/apis/common/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/annotation"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	commonv1beta1 "github.com/cloudptio/logstash-operator/pkg/apis/common/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/annotation"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/pkg/errors"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/api/meta"

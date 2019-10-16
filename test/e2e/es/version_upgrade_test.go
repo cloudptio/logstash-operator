@@ -7,7 +7,7 @@ package es
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/elasticsearch"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/elasticsearch"
 )
 
 func TestVersionUpgrade680To720(t *testing.T) {

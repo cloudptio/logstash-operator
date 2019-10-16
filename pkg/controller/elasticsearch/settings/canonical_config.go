@@ -5,8 +5,8 @@
 package settings
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	common "github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	common "github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
 )
 
 // CanonicalConfig contains configuration for Elasticsearch ("elasticsearch.yml"),

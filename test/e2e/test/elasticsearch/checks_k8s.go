@@ -7,12 +7,12 @@ package elasticsearch
 import (
 	"fmt"
 
-	estype "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
-	esname "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/name"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
+	estype "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
+	esname "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/name"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
 	corev1 "k8s.io/api/core/v1"
 )
 

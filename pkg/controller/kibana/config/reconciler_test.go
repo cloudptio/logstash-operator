@@ -7,11 +7,11 @@ package config
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/about"
-	"github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/label"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	"github.com/cloudptio/logstash-operator/pkg/about"
+	"github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/label"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"

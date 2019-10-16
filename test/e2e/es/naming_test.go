@@ -11,19 +11,19 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/test/e2e/test"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/apmserver"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/elasticsearch"
-	"github.com/elastic/cloud-on-k8s/test/e2e/test/kibana"
+	"github.com/cloudptio/logstash-operator/test/e2e/test"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/apmserver"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/elasticsearch"
+	"github.com/cloudptio/logstash-operator/test/e2e/test/kibana"
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/require"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/util/rand"
 	"k8s.io/apimachinery/pkg/util/validation"
 
-	estype "github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/name"
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
+	estype "github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/name"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
 )
 
 func TestNameValidation(t *testing.T) {

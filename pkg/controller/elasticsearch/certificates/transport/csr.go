@@ -11,9 +11,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	netutil "github.com/elastic/cloud-on-k8s/pkg/utils/net"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	netutil "github.com/cloudptio/logstash-operator/pkg/utils/net"
 	"github.com/pkg/errors"
 	corev1 "k8s.io/api/core/v1"
 )

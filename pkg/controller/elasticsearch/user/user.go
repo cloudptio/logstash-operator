@@ -5,7 +5,7 @@
 package user
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
 	"golang.org/x/crypto/bcrypt"
 )
 

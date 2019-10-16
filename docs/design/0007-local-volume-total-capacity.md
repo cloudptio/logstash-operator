@@ -134,4 +134,4 @@ Cons:
 
 * [Elastic dynamic provisioner for local volumes](https://github.com/elastic/local-volume)
 * [Kubernetes static local volume provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner)
-* [Local volume initial issue](https://github.com/elastic/cloud-on-k8s/issues/108)
+* [Local volume initial issue](https://github.com/cloudptio/logstash-operator/issues/108)

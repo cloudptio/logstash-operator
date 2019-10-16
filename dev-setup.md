@@ -18,7 +18,7 @@ Before you start, install the following tools and packages:
 ### Get sources 
 
 ```bash
-git clone https://github.com/elastic/cloud-on-k8s.git
+git clone https://github.com/cloudptio/logstash-operator.git
 cd cloud-on-k8s
 ```
 

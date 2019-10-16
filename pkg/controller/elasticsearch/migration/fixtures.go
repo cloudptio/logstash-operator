@@ -9,7 +9,7 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
-	esclient "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client"
+	esclient "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
 )
 
 func loadFileBytes(fileName string) []byte {

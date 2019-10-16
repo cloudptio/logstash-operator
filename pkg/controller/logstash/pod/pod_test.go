@@ -7,9 +7,9 @@ package pod
 import (
 	"testing"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/logstash/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/keystore"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/logstash/label"
+	"github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/keystore"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/label"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	corev1 "k8s.io/api/core/v1"

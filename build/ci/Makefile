@@ -5,7 +5,7 @@
 # This Makefile is mostly used for continuous integration.
 
 ROOT_DIR = $(CURDIR)/../..
-GO_MOUNT_PATH ?= /go/src/github.com/elastic/cloud-on-k8s
+GO_MOUNT_PATH ?= /go/src/github.com/cloudptio/logstash-operator
 
 # This is set to avoid the issue described in https://github.com/hashicorp/vault/issues/6710
 VAULT_CLIENT_TIMEOUT = 120

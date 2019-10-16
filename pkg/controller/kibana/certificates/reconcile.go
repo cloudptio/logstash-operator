@@ -7,13 +7,13 @@ package certificates
 import (
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/apis/kibana/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates/http"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/driver"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/reconciler"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/label"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/kibana/name"
+	"github.com/cloudptio/logstash-operator/pkg/apis/kibana/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates/http"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/driver"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/label"
+	"github.com/cloudptio/logstash-operator/pkg/controller/kibana/name"
 	coverv1 "k8s.io/api/core/v1"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 )

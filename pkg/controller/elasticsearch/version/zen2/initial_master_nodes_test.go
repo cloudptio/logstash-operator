@@ -9,10 +9,10 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	settings2 "github.com/elastic/cloud-on-k8s/pkg/controller/common/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/nodespec"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/settings"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/sset"
+	settings2 "github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/nodespec"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/settings"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/sset"
 )
 
 func TestSetupInitialMasterNodes(t *testing.T) {

@@ -18,10 +18,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/certificates"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/version"
-	fixtures "github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/client/test_fixtures"
-	"github.com/elastic/cloud-on-k8s/pkg/dev/portforward"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/certificates"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
+	fixtures "github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client/test_fixtures"
+	"github.com/cloudptio/logstash-operator/pkg/dev/portforward"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

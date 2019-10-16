@@ -5,9 +5,9 @@
 package sset
 
 import (
-	"github.com/elastic/cloud-on-k8s/pkg/apis/elasticsearch/v1beta1"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/common/hash"
-	"github.com/elastic/cloud-on-k8s/pkg/controller/elasticsearch/label"
+	"github.com/cloudptio/logstash-operator/pkg/apis/elasticsearch/v1beta1"
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/hash"
+	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/label"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"

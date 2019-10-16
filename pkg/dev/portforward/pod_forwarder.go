@@ -13,8 +13,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/elastic/cloud-on-k8s/pkg/utils/k8s"
-	utilsnet "github.com/elastic/cloud-on-k8s/pkg/utils/net"
+	"github.com/cloudptio/logstash-operator/pkg/utils/k8s"
+	utilsnet "github.com/cloudptio/logstash-operator/pkg/utils/net"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/fields"
 	"k8s.io/apimachinery/pkg/types"

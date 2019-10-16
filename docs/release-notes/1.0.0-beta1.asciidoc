@@ -1,5 +1,5 @@
-:issue: https://github.com/elastic/cloud-on-k8s/issues/
-:pull: https://github.com/elastic/cloud-on-k8s/pull/
+:issue: https://github.com/cloudptio/logstash-operator/issues/
+:pull: https://github.com/cloudptio/logstash-operator/pull/
 
 [[release-notes-1.0.0-beta1]]
 == {n} version 1.0.0-beta1
