@@ -65,5 +65,5 @@ EOF
 You can follow the
 [the official getting started guide](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html)
 and
-view the [samples/](samples/) to see more on how to configure each of the ELK
+view the [samples/](config/samples/) to see more on how to configure each of the ELK
 components.
