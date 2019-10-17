@@ -11,12 +11,10 @@ Install the operator and CRDs:
 kubectl apply -f https://github.com/cloudptio/logstash-operator/blob/master/config/all-in-one-flavor-default.yaml
 ```
 
-*Or, in development (or while the repo is still private...)*
+*Or locally:*
 
 ```shell
-git clone git@github.com:cloudptio/logstash-operator.git
-cd logstash-operator
-make install-crds
+kubectl apply -f config/all-in-one-flavor-default.yaml
 ```
 
 Monitor the operator logs:
@@ -66,6 +64,13 @@ spec:
       port => 5044
     }
 EOF
+```
+
+Ingest all the K8S Pod logs with Filebeat:
+
+```shell
+# NOTE: you'll need to swap `quickstart` with your cluster name.
+kubectl apply -f config/samples/filebeat/filebeat.yaml
 ```
 
 ---
