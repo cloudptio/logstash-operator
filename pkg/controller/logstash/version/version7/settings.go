@@ -6,12 +6,9 @@ package version7
 
 import (
 	lstype "github.com/cloudptio/logstash-operator/pkg/apis/logstash/v1beta1"
-	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/config"
 )
 
 // SettingsFactory returns Logstash settings for a 7.x Logstash.
 func SettingsFactory(ls lstype.Logstash) map[string]interface{} {
-	return map[string]interface{}{
-		config.ElasticsearchHosts: ls.AssociationConf().GetURL(),
-	}
+	return map[string]interface{}{}
 }

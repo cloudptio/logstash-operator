@@ -10,7 +10,7 @@ import (
 
 func TestHTTPService(t *testing.T) {
 	type args struct {
-		kbName string
+		lsName string
 	}
 	tests := []struct {
 		name string
@@ -19,13 +19,13 @@ func TestHTTPService(t *testing.T) {
 	}{
 		{
 			name: "sample",
-			args: args{kbName: "sample"},
-			want: "sample-kb-http",
+			args: args{lsName: "sample"},
+			want: "sample-ls-http",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := HTTPService(tt.args.kbName); got != tt.want {
+			if got := HTTPService(tt.args.lsName); got != tt.want {
 				t.Errorf("HTTPService() = %v, want %v", got, tt.want)
 			}
 		})

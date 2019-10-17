@@ -5,6 +5,7 @@
 package user
 
 import (
+	"github.com/cloudptio/logstash-operator/pkg/controller/common/user"
 	"github.com/cloudptio/logstash-operator/pkg/controller/elasticsearch/client"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -37,7 +38,7 @@ func Roles(roles ...string) Attr {
 func New(name string, setters ...Attr) User {
 	result := User{
 		name:     name,
-		password: "8jwjzmdwk8cd8xxszmbsbtrk", //string(user.RandomPasswordBytes()),
+		password: string(user.RandomPasswordBytes()),
 	}
 	for _, setter := range setters {
 		setter(&result)

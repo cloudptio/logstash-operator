@@ -275,7 +275,7 @@ func (r *ReconcileAssociation) reconcileInternal(logstash *lstype.Logstash) (com
 			AssociationLabelName:      logstash.Name,
 			AssociationLabelNamespace: logstash.Namespace,
 		},
-		elasticsearchuser.LogstashSystemUserBuiltinRole,
+		elasticsearchuser.LogstashAdminUserBuiltinRole,
 		logstashUserSuffix,
 		es); err != nil {
 		return commonv1beta1.AssociationPending, err

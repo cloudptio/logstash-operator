@@ -8,7 +8,10 @@ import (
 	common_name "github.com/cloudptio/logstash-operator/pkg/controller/common/name"
 )
 
-const httpServiceSuffix = "http"
+const (
+	httpServiceSuffix       = "http"
+	pipelineConfigMapSuffix = "pipeline"
+)
 
 // LSNamer is a Namer that is configured with the defaults for resources related to a Logstash resource.
 var LSNamer = common_name.NewNamer("ls")
@@ -19,4 +22,8 @@ func HTTPService(lsName string) string {
 
 func Deployment(lsName string) string {
 	return LSNamer.Suffix(lsName)
+}
+
+func PipelineConfigMap(lsName string) string {
+	return LSNamer.Suffix(lsName, pipelineConfigMapSuffix)
 }

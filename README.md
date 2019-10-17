@@ -1,34 +1,48 @@
+# Logstash Operator
 
-[![Build Status](https://devops-ci.elastic.co/buildStatus/icon?job=cloud-on-k8s-e2e-tests&subject=E2E%20tests)](https://devops-ci.elastic.co/view/cloud-on-k8s/job/cloud-on-k8s-e2e-tests)
-[![GitHub release](https://img.shields.io/github/v/release/elastic/cloud-on-k8s.svg)](https://github.com/cloudptio/logstash-operator/releases/latest)
+This repo is a fork of [Elastic Cloud on Kubernetes (ECK)](https://github.com/elastic/cloud-on-k8s)
+with support for Logstash.
 
-# Elastic Cloud on Kubernetes (ECK)
+## Install
 
-Elastic Cloud on Kubernetes automates the deployment, provisioning, management, and orchestration of Elasticsearch and Kibana on Kubernetes based on the operator pattern.
+Install the operator and CRDs:
 
-This is a beta version.
-
-Current features:
-
-*  Elasticsearch and Kibana deployments
-*  TLS Certificates management
-*  Safe Elasticsearch cluster configuration & topology changes
-*  Persistent volumes usage
-*  Custom node configuration and attributes
-*  Secure settings keystore updates
-
-Supported versions:
-
-*  Kubernetes: 1.11+
-*  Elasticsearch: 6.8+, 7.1+
-
-Check the [Quickstart](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html) if you want to deploy you first cluster with ECK.
-
-If you want to contribute to the project, check our [contributing guide](CONTRIBUTING.md) and see [how to setup a local development environment](dev-setup.md).
-
-For general questions, please see the Elastic [forums](https://discuss.elastic.co/c/eck).
-
+```shell
+kubectl apply -f https://github.com/cloudptio/logstash-operator/blob/master/config/all-in-one-flavor-default.yaml
 ```
+
+Monitor the operator logs:
+
+```shell
+kubectl -n elastic-system logs -f statefulset.apps/elastic-operator
+```
+
+## Use
+
+Deploy an Elasticsearch cluster:
+
+```shell
+cat <<EOF | kubectl apply -f -
+apiVersion: elasticsearch.k8s.elastic.co/v1beta1
+kind: Elasticsearch
+metadata:
+  name: quickstart
+spec:
+  version: 7.4.0
+  nodeSets:
+  - name: default
+    count: 1
+    config:
+      node.master: true
+      node.data: true
+      node.ingest: true
+      node.store.allow_mmap: false
+EOF
+```
+
+Deploy Logstash:
+
+```shell
 cat <<EOF | kubectl apply -f -
 apiVersion: logstash.k8s.elastic.co/v1beta1
 kind: Logstash
@@ -39,5 +53,17 @@ spec:
   count: 1
   elasticsearchRef:
     name: quickstart
+  inputConf:
+    beats {
+      port => 5044
+    }
 EOF
 ```
+
+---
+
+You can follow the
+[the official getting started guide](https://www.elastic.co/guide/en/cloud-on-k8s/current/k8s-quickstart.html)
+and
+view the [samples/](config/samples/) to see more on how to configure each of the ELK
+components.

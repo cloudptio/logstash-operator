@@ -14,12 +14,13 @@ export SHELL := /bin/bash
 
 KUBECTL_CLUSTER := $(shell kubectl config current-context 2> /dev/null)
 
-REPOSITORY 	?= eck
-NAME       	?= eck-operator
+REPOSITORY 	?= sandbox-kube-233423# cloudptio
+NAME       	?= logstash-operator
+
 VERSION    	?= $(shell cat VERSION)
 SNAPSHOT   	?= true
 
-LATEST_RELEASED_IMG ?= "docker.elastic.co/eck/$(NAME):0.8.0"
+LATEST_RELEASED_IMG ?= "us.gcr.io/sandbox-kube-233423/$(NAME):1.0.0-beta1-ad8b87b0"
 
 # Default to debug logging
 LOG_VERBOSITY ?= 1
@@ -55,15 +56,15 @@ endif
 
 # on GKE, use GCR and GCLOUD_PROJECT
 ifneq ($(findstring gke_,$(KUBECTL_CLUSTER)),)
-	REGISTRY ?= eu.gcr.io
+	REGISTRY ?= us.gcr.io
 else
 	# default to local registry
 	REGISTRY ?= localhost:5000
 endif
 
 # suffix image name with current user name
-IMG_SUFFIX ?= -$(subst _,,$(USER))
-IMG ?= $(REGISTRY)/$(REPOSITORY)/$(NAME)$(IMG_SUFFIX)
+# IMG_SUFFIX ?= -$(subst _,,$(USER))
+IMG ?= $(REGISTRY)/$(REPOSITORY)/$(NAME)#$(IMG_SUFFIX)
 TAG ?= $(shell git rev-parse --short --verify HEAD)
 OPERATOR_IMAGE ?= $(IMG):$(VERSION)-$(TAG)
 

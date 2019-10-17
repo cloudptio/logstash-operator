@@ -19,11 +19,10 @@ import (
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/keystore"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/operator"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/reconciler"
-	"github.com/cloudptio/logstash-operator/pkg/controller/common/settings"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/version"
 	"github.com/cloudptio/logstash-operator/pkg/controller/common/watches"
 	lscerts "github.com/cloudptio/logstash-operator/pkg/controller/logstash/certificates"
-	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/config"
+	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/configmap"
 	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/es"
 	"github.com/cloudptio/logstash-operator/pkg/controller/logstash/label"
 	lsname "github.com/cloudptio/logstash-operator/pkg/controller/logstash/name"
@@ -99,8 +98,6 @@ func (d *driver) deploymentParams(ls *lstype.Logstash) (deployment.Params, error
 		return deployment.Params{}, err
 	}
 
-
-
 	logstashPodSpec := pod.NewPodTemplateSpec(*ls, keystoreResources)
 
 	// TODO: Add reference to dynamic ES connection
@@ -154,10 +151,9 @@ func (d *driver) deploymentParams(ls *lstype.Logstash) (deployment.Params, error
 
 		// TODO: this is a little ugly as it reaches into the ES controller bits
 		esCertsVolume := es.CaCertSecretVolume(*ls)
-		configVolume := config.SecretVolume(*ls)
 
 		logstashPodSpec.Spec.Volumes = append(logstashPodSpec.Spec.Volumes,
-			esCertsVolume.Volume(), configVolume.Volume())
+			esCertsVolume.Volume())
 
 		for i := range logstashPodSpec.Spec.InitContainers {
 			logstashPodSpec.Spec.InitContainers[i].VolumeMounts = append(logstashPodSpec.Spec.InitContainers[i].VolumeMounts,
@@ -166,7 +162,7 @@ func (d *driver) deploymentParams(ls *lstype.Logstash) (deployment.Params, error
 
 		logstashContainer := pod.GetLogstashContainer(logstashPodSpec.Spec)
 		logstashContainer.VolumeMounts = append(logstashContainer.VolumeMounts,
-			esCertsVolume.VolumeMount(), configVolume.VolumeMount())
+			esCertsVolume.VolumeMount())
 	}
 
 	if ls.Spec.HTTP.TLS.Enabled() {
@@ -191,13 +187,13 @@ func (d *driver) deploymentParams(ls *lstype.Logstash) (deployment.Params, error
 
 	}
 
-	// get config secret to add its content to the config checksum
-	configSecret := corev1.Secret{}
-	err = d.client.Get(types.NamespacedName{Name: config.SecretName(*ls), Namespace: ls.Namespace}, &configSecret)
-	if err != nil {
-		return deployment.Params{}, err
-	}
-	_, _ = configChecksum.Write(configSecret.Data[config.SettingsFilename])
+	// // get config secret to add its content to the config checksum
+	// configSecret := corev1.Secret{}
+	// err = d.client.Get(types.NamespacedName{Name: config.SecretName(*ls), Namespace: ls.Namespace}, &configSecret)
+	// if err != nil {
+	// 	return deployment.Params{}, err
+	// }
+	// _, _ = configChecksum.Write(configSecret.Data[config.SettingsFilename])
 
 	// add the checksum to a label for the deployment and its pods (the important bit is that the pod template
 	// changes, which will trigger a rolling update)
@@ -225,6 +221,10 @@ func (d *driver) Reconcile(
 		return &results
 	}
 
+	if err := configmap.ReconcilePipelineConfigMap(d.client, d.scheme, *ls); err != nil {
+		return results.WithError(err)
+	}
+
 	svc, err := common.ReconcileService(d.client, d.scheme, NewService(*ls), ls)
 	if err != nil {
 		// TODO: consider updating some status here?
@@ -236,20 +236,20 @@ func (d *driver) Reconcile(
 		return &results
 	}
 
-	lsSettings, err := config.NewConfigSettings(d.client, *ls)
-	if err != nil {
-		return results.WithError(err)
-	}
-	err = lsSettings.MergeWith(
-		settings.MustCanonicalConfig(d.settingsFactory(*ls)),
-	)
-	if err != nil {
-		return results.WithError(err)
-	}
-	err = config.ReconcileConfigSecret(d.client, *ls, lsSettings, params.OperatorInfo)
-	if err != nil {
-		return results.WithError(err)
-	}
+	// lsSettings, err := config.NewConfigSettings(d.client, *ls)
+	// if err != nil {
+	// 	return results.WithError(err)
+	// }
+	// err = lsSettings.MergeWith(
+	// 	settings.MustCanonicalConfig(d.settingsFactory(*ls)),
+	// )
+	// if err != nil {
+	// 	return results.WithError(err)
+	// }
+	// err = config.ReconcileConfigSecret(d.client, *ls, lsSettings, params.OperatorInfo)
+	// if err != nil {
+	// 	return results.WithError(err)
+	// }
 
 	deploymentParams, err := d.deploymentParams(ls)
 	if err != nil {

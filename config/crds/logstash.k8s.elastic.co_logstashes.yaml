@@ -4615,9 +4615,6 @@ spec:
           spec:
             description: LogstashSpec defines the desired state of Logstash
             properties:
-              config:
-                description: Config represents Logstash configuration.
-                type: object
               count:
                 description: Count defines how many nodes the Logstash deployment
                   must have.
@@ -4870,6 +4867,12 @@ spec:
                 type: object
               image:
                 description: Image represents the docker image that will be used.
+                type: string
+              inputConf:
+                description: InputConf represents Logstash configuration for inputs.
+                type: string
+              outputConf:
+                description: OutputConf represents Logstash configuration for outputs.
                 type: string
               podTemplate:
                 description: PodTemplate can be used to propagate configuration to

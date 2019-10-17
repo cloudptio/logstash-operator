@@ -81,10 +81,6 @@ func (in *LogstashList) DeepCopyObject() runtime.Object {
 func (in *LogstashSpec) DeepCopyInto(out *LogstashSpec) {
 	*out = *in
 	out.ElasticsearchRef = in.ElasticsearchRef
-	if in.Config != nil {
-		in, out := &in.Config, &out.Config
-		*out = (*in).DeepCopy()
-	}
 	in.HTTP.DeepCopyInto(&out.HTTP)
 	in.PodTemplate.DeepCopyInto(&out.PodTemplate)
 	if in.SecureSettings != nil {

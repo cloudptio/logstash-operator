@@ -1,0 +1,33 @@
+apiVersion: logstash.k8s.elastic.co/v1beta1
+kind: Logstash
+metadata:
+  name: quickstart
+spec:
+  version: 7.4.0
+  count: 1
+  elasticsearchRef:
+    name: quickstart
+  inputConf: |
+    input {
+      udp {
+        port => 1514
+        type => syslog
+      }
+      tcp {
+        port => 1514
+        type => syslog
+      }
+      beats {
+        port => 5044
+      }
+      http {
+        port => 8080
+      }
+      kafka {
+        bootstrap_servers => "kafka-input:9092"
+        codec => json { charset => "UTF-8" }
+        consumer_threads => 1
+        topics => ["source"]
+        type => "example"
+      }
+    }
