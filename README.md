@@ -11,6 +11,14 @@ Install the operator and CRDs:
 kubectl apply -f https://github.com/cloudptio/logstash-operator/blob/master/config/all-in-one-flavor-default.yaml
 ```
 
+*Or, in development (or while the repo is still private...)*
+
+```shell
+git clone git@github.com:cloudptio/logstash-operator.git
+cd logstash-operator
+make install-crds
+```
+
 Monitor the operator logs:
 
 ```shell
