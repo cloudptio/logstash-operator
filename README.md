@@ -8,7 +8,7 @@ with support for Logstash.
 Install the operator and CRDs:
 
 ```shell
-kubectl apply -f https://github.com/cloudptio/logstash-operator/blob/master/config/all-in-one-flavor-default.yaml
+kubectl apply -f https://raw.githubusercontent.com/cloudptio/logstash-operator/master/config/all-in-one-flavor-default.yaml
 ```
 
 *Or locally:*
