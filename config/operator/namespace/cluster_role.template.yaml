@@ -103,6 +103,20 @@ rules:
   - patch
   - delete
 - apiGroups:
+  - logstash.k8s.elastic.co
+  resources:
+  - logstashes
+  - logstashes/status
+  - logstashes/finalizers
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
   - associations.k8s.elastic.co
   resources:
   - apmserverelasticsearchassociations
@@ -136,4 +150,3 @@ rules:
   - get
   - update
   - patch
-

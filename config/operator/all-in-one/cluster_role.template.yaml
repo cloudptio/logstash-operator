@@ -93,6 +93,20 @@ rules:
   - patch
   - delete
 - apiGroups:
+  - logstash.k8s.elastic.co
+  resources:
+  - logstashes
+  - logstashes/status
+  - logstashes/finalizers
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
   - apm.k8s.elastic.co
   resources:
   - apmservers
