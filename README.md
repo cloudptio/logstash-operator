@@ -59,7 +59,7 @@ spec:
   count: 1
   elasticsearchRef:
     name: quickstart
-  inputConf:
+  inputConf: |
     beats {
       port => 5044
     }
